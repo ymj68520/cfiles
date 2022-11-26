@@ -1,0 +1,6 @@
+可以将ElementType定义在头文件之前
+类似于
+“
+    typedef int ElementType;
+    #include "***.h"
+”

@@ -1,0 +1,5 @@
+#用户名     密码       权限         目录
+# root      12345      elradfmwM    /home
+user        12345      elradfmwM    /home/vagrant/c_win/综合课设/Project/server
+justlook    12345      elr          /home
+justwrite   12345      ladfmw       /home

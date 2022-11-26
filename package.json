@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps"
+  },
+  "dependencies": {
+    "typings": "^0.6.10"
+  }
+}

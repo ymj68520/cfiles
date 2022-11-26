@@ -1,0 +1,19 @@
+h1{
+    color: aqua;
+}
+input{
+    /* color: rgb(245, 0, 0); */
+    font-weight: 900;
+    border-radius: 3px;
+    /* height: 1cm; */
+    /* width: 5cm; */
+    /* offset-distance: 100px; */
+}
+button{
+    color: salmon;
+    width: fit-content;
+    height: fit-content;
+}
+hr{
+    color: rgb(255, 0, 0);
+}

@@ -1,0 +1,5 @@
+由于开发环境是Ubuntu 21.04 
+使用Vs code ，C11标准编译
+可能在Windows等其他环境运行报错
+
+测试案例为UTF 8编码的文本文件，没有后缀，可在Windows下记事本打开 或用Linux下的vim查看
