@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # 图书馆管理系统
 #
 BOLD=$(tput smso)
