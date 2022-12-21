@@ -32,7 +32,8 @@ public:
     void find(int target, vector<Node*>& pre) {
         auto p = head; // 从头节点开始遍历每一层
         for (int i = level - 1; i >= 0; i -- ) { // 从上层往下层找
-            while (p->next[i] && p->next[i]->val < target) p = p->next[i]; // 如果当前层 i 的 next 不为空，且它的值小于 target，则 p 往后走指向这一层 p 的 next
+            while (p->next[i] && p->next[i]->val < target) 
+                p = p->next[i]; // 如果当前层 i 的 next 不为空，且它的值小于 target，则 p 往后走指向这一层 p 的 next
             pre[i] = p; // 退出 while 时说明找到了第 i 层小于 target 的最大节点就是 p
         }
     }
