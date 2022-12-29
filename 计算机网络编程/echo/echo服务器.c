@@ -7,6 +7,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <netinet/in.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
 
 #define MAXCONNECT 255
 #define BROADCAST "0.0.0.0"
@@ -17,9 +19,18 @@ void echo(int client, struct in_addr addr){
     // 定义消息缓冲区并初始化
     char mesg[256]; memset(mesg,0,sizeof(mesg));
     // 从客户端套接字读取255个字符，保留一个'\0'的位置
-    read(client,mesg,255);
-    // 将缓冲区内容发回客户
-    write(client,mesg,strlen(mesg));
+    fd_set ori,tmp;
+    FD_SET(client,&ori);
+    while(1){
+        tmp = ori;
+        select(client+1,&tmp,NULL,NULL,NULL);
+        int n = 0;
+        ioctl(client,FIONREAD,&n);
+        if(n==0)    break;
+        read(client,mesg,255);
+        // 将缓冲区内容发回客户
+        write(client,mesg,strlen(mesg));
+    }
     // 关闭连接
     close(client);
     // 服务器显示信息

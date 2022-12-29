@@ -118,7 +118,8 @@
 			"file.h": "c",
 			"socket.h": "c",
 			"time.h": "c",
-			"inet.h": "c"
+			"inet.h": "c",
+			"ioctl.h": "c"
 		}
 	}
 }
