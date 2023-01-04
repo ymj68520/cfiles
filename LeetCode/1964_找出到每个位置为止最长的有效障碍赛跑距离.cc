@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution1 {
 public:
     struct node{
         int val,l,r;
@@ -74,5 +74,24 @@ public:
             modify(val,1,res);
         }
         return k;
+    }
+};
+
+class Solution {
+public:
+    vector<int> longestObstacleCourseAtEachPosition(vector<int>& obstacles) {
+        vector<int> ans;
+        vector<int> lis;
+        for (auto i : obstacles) {
+            if (lis.empty() || i >= lis.back()) {
+                lis.push_back(i);
+                ans.push_back(lis.size());
+            } else {
+                auto it = upper_bound(lis.begin(), lis.end(), i);
+                ans.push_back(it - lis.begin() + 1);
+                *it = i;
+            }
+        }
+        return ans;
     }
 };
